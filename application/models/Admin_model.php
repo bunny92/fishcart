@@ -22,4 +22,26 @@ class Admin_model extends CI_Model {
         $this->db->where('username', 'admin');
         $this->db->update('admin_users', $data);
     }
+
+    public function getTableData($tableName) {
+        return $this->db->get($tableName)->result();
+    }
+
+    public function showproductsbyid_model($productId) {
+        $sql = "SELECT * FROM product_details where id = $productId";
+        $query = $this->db->query($sql);
+        return $query->row();
+    }
+
+    public function addProductModel($data) {
+        $this->db->insert('product_details', $data);
+        $groupId = $this->db->insert_id();
+        if ($groupId > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+            ;
+        }
+    }
+
 }

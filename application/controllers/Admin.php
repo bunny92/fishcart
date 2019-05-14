@@ -44,6 +44,76 @@ class Admin extends CI_Controller {
         redirect(base_url('admin'));
     }
 
+    public function addProduct() {
+        if ($this->session->userdata('admin_login') != 1) {
+            redirect(base_url() . 'admin');
+        } elseif ($this->session->userdata('admin_login') == 1) {
+            $data['category'] = $this->admin_model->getTableData('catrgories');
+            $this->load->view('admin/addProduct', $data);
+        } else {
+            echo "404 Error..!";
+        }
+    }
+
+    public function add_product() {
+        if (!empty($_FILES['product_image']['name'])) {
+            $config['upload_path'] = 'product_images/';
+            $config['allowed_types'] = 'jpg|jpeg|png';
+            $config['file_name'] = $_FILES['product_image']['name'];
+
+            //Load upload library and initialize configuration
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if ($this->upload->do_upload('product_image')) {
+                $uploadData = $this->upload->data();
+                $product_image = base_url("product_images/" . $uploadData['raw_name'] . $uploadData['file_ext']);
+            } else {
+                $product_image = NULL;
+            }
+        } else {
+            $product_image = NULL;
+        }
+        if ($product_image != NULL) {
+            $data = [
+                'product_name' => $this->input->post('product_name'),
+                'product_description' => $this->input->post('product_description'),
+                'product_price' => $this->input->post('product_price'),
+                'stock' => $this->input->post('stock'),
+                'seller' => $this->input->post('seller'),
+                'product_image' => $product_image,
+                'category_id' => $this->input->post('category_id'),
+                'SKU' => date('ymd') . '-' . rand(010, 200),
+                'product_cost' => $this->input->post('product_cost')
+            ];
+            $response = $this->admin_model->addProductModel($data);
+            if ($response == TRUE) {
+                $this->session->set_flashdata('success', "Product added successfully..!");
+            } else {
+                $this->session->set_flashdata('error', "Something went wrong..!");
+            }
+            redirect('admin/addProduct', 'refresh');
+        } else {
+            $this->session->set_flashdata('error', "Product image not uploaded..!");
+        }
+    }
+
+    function showProducts() {
+        $data['product'] = $this->admin_model->getTableData('product_details');
+        $this->load->view('admin/showProducts', $data);
+    }
+
+    function showProductsById($id) {
+        if ($this->session->userdata('admin_login') != 1) {
+            redirect(base_url() . 'admin');
+        } elseif ($this->session->userdata('admin_login') == 1) {
+            $data['product'] = $this->admin_model->showproductsbyid_model($id);
+            $this->load->view('admin/showProductsById', $data);
+        } else {
+            echo "404 Error..!";
+        }
+    }
+
     public function dashboard() {
         if ($this->session->userdata('admin_login') != 1) {
             redirect(base_url() . 'admin');

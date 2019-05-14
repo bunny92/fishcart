@@ -32,6 +32,10 @@
 
 <script src="<?php echo base_url() ?>assets/js/core/demo/DemoUIMessages.js"></script>
 <script src="<?php echo base_url() ?>assets/js/libs/toastr/toastr.js"></script>
+
+<script src="<?php echo base_url() ?>assets/js/libs/DataTables/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
 <!-- END JAVASCRIPT -->
 
 </body>

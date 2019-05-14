@@ -17,6 +17,10 @@
         <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
         <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/css/theme-default/libs/toastr/toastr.css?1425466569" />
+
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989" />
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1423553990" />
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1423553990" />
         <!-- END STYLESHEETS -->
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -28,3 +32,4 @@
             var baseurl = '<?php echo base_url(); ?>';
         </script>
     </head>
+    <body class="menubar-hoverable header-fixed menubar-pin menubar-first">
