@@ -1,33 +1,60 @@
-<!-- BEGIN HEADER-->
-<header id="header" >
-    <div class="headerbar">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="headerbar-left">
-            <ul class="header-nav header-nav-options">
-                <li class="header-nav-brand" >
-                    <div class="brand-holder">
-                        <a href="<?php echo base_url() ?>html/dashboards/dashboard.html">
-                            <span class="text-lg text-bold text-primary">FISHING CART</span>
-                        </a>
-                    </div>
+<div class="page-header navbar navbar-fixed-top">
+    <!-- BEGIN HEADER INNER -->
+    <div class="page-header-inner">
+        <!-- BEGIN LOGO -->
+        <div class="page-logo">
+            <a href="index.html">
+                <img src="<?= base_url() ?>/assets/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+            </a>
+            <div class="menu-toggler sidebar-toggler hide">
+                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+            </div>
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+        </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+
+                <li class="dropdown dropdown-user">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <img alt="" class="img-circle" src="<?= base_url() ?>/assets/admin/layout/img/avatar3_small.jpg"/>
+                        <span class="username username-hide-on-mobile">
+                            Admin </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a href="extra_profile.html">
+                                <i class="icon-user"></i> My Profile </a>
+                        </li>
+                        <li>
+                            <a href="page_calendar.html">
+                                <i class="icon-calendar"></i> My Calendar </a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="login.html">
+                                <i class="icon-key"></i> Log Out </a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
-                        <i class="fa fa-bars"></i>
+                <!-- END USER LOGIN DROPDOWN -->
+                <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-quick-sidebar-toggler">
+                    <a href="<?= base_url() ?>admin/admin_logout" class="dropdown-toggle">
+                        <i class="icon-logout"></i>
                     </a>
                 </li>
+                <!-- END QUICK SIDEBAR TOGGLER -->
             </ul>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="headerbar-right">
-            <ul class="header-nav header-nav-toggle">
-                <li>
-                    <a class="btn btn-icon-toggle btn-default" href="<?= base_url() ?>admin/admin_logout" data-backdrop="false">
-                        <i class="fa fa-sign-out"></i>
-                    </a>
-                </li>
-            </ul><!--end .header-nav-toggle -->
-        </div><!--end #header-navbar-collapse -->
+        <!-- END TOP NAVIGATION MENU -->
     </div>
-</header>
-<!-- END HEADER-->
+    <!-- END HEADER INNER -->
+</div>

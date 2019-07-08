@@ -1,42 +1,78 @@
 
-<!-- BEGIN JAVASCRIPT -->
+<!-- END LOGIN -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="<?= base_url() ?>/assets/global/plugins/respond.min.js"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/spin.js/spin.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/autosize/jquery.autosize.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/core/source/App.js"></script>
-<script src="<?php echo base_url() ?>assets/js/core/source/AppNavigation.js"></script>
-<script src="<?php echo base_url() ?>assets/js/core/source/AppOffcanvas.js"></script>
-<script src="<?php echo base_url() ?>assets/js/core/source/AppCard.js"></script>
-<script src="<?php echo base_url() ?>assets/js/core/source/AppForm.js"></script>
-<script src="<?php echo base_url() ?>assets/js/core/source/AppNavSearch.js"></script>
-<script src="<?php echo base_url() ?>assets/js/core/source/AppVendor.js"></script>
-<script src="<?php echo base_url() ?>assets/js/core/demo/Demo.js"></script>
-
-<script src="<?php echo base_url() ?>assets/js/libs/moment/moment.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/flot/jquery.flot.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/flot/jquery.flot.time.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/flot/jquery.flot.resize.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/flot/jquery.flot.orderBars.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/flot/jquery.flot.pie.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/flot/curvedLines.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/jquery-knob/jquery.knob.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/sparkline/jquery.sparkline.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/d3/d3.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/d3/d3.v3.js"></script>
-
-<script src="<?php echo base_url() ?>assets/js/core/demo/DemoUIMessages.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/toastr/toastr.js"></script>
-
-<script src="<?php echo base_url() ?>assets/js/libs/DataTables/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
-<!-- END JAVASCRIPT -->
-
-</body>
-</html>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="<?= base_url() ?>/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="<?= base_url() ?>/assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/bootstrap-toastr/toastr.min.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/global/plugins/plupload/js/plupload.full.min.js" type="text/javascript"></script>
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="<?= base_url() ?>/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/admin/pages/scripts/login.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>/assets/admin/pages/scripts/ecommerce-products-edit.js"></script>
+<script src="<?= base_url() ?>/assets/admin/pages/scripts/table-managed.js"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+    jQuery(document).ready(function () {
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        Demo.init();
+        EcommerceProductsEdit.init();
+         TableManaged.init();
+    });
+    function updateTime() {
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if (h < 10)
+        {
+            h = "0" + h;
+        }
+        m = date.getMinutes();
+        if (m < 10)
+        {
+            m = "0" + m;
+        }
+        s = date.getSeconds();
+        if (s < 10)
+        {
+            s = "0" + s;
+        }
+        result = '' + days[day] + ',  ' + months[month] + ' ' + d + ' ' + year + ' - ' + h + ':' + m + ':' + s;
+        $('#time').html(result);
+    }
+    $(function () {
+        setInterval(updateTime, 1000);
+    });
+</script>

@@ -48,7 +48,7 @@ class Admin extends CI_Controller {
         if ($this->session->userdata('admin_login') != 1) {
             redirect(base_url() . 'admin');
         } elseif ($this->session->userdata('admin_login') == 1) {
-            $data['category'] = $this->admin_model->getTableData('catrgories');
+            $data['category'] = $this->admin_model->getTableData('categories');
             $this->load->view('admin/addProduct', $data);
         } else {
             echo "404 Error..!";
@@ -56,6 +56,7 @@ class Admin extends CI_Controller {
     }
 
     public function add_product() {
+       
         if (!empty($_FILES['product_image']['name'])) {
             $config['upload_path'] = 'product_images/';
             $config['allowed_types'] = 'jpg|jpeg|png';
@@ -72,7 +73,7 @@ class Admin extends CI_Controller {
                 $product_image = NULL;
             }
         } else {
-            $product_image = NULL;
+            $this->session->set_flashdata('error', "Product image not uploaded..!");
         }
         if ($product_image != NULL) {
             $data = [
@@ -101,6 +102,12 @@ class Admin extends CI_Controller {
     function showProducts() {
         $data['product'] = $this->admin_model->getTableData('product_details');
         $this->load->view('admin/showProducts', $data);
+    }
+
+    function ajax_deleteProduct(){
+        $product_id  = $this->input->post('product_id');
+        $response = $this->admin_model->deleteProduct($product_id);
+        echo $response;
     }
 
     function showProductsById($id) {
